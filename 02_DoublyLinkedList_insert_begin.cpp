@@ -6,31 +6,29 @@ struct Node
     struct Node *prev;
     struct Node *next;
 };
-
+// 26/4
 struct Node *head;
-struct Node *temp;
 void insert()
 {
-      Node *new_node=new Node();
-      int i;
-      cin>>i;
-        new_node->data=i;
-        new_node->prev=0;
-        new_node->next=0;
-        if(head==0)
+    for (int i = 0; i < 5; i++)
+    {
+        Node *new_node = new Node();
+
+        new_node->data = i + 1;
+        new_node->next = 0;
+        new_node->prev = 0;
+        if (head == 0)
         {
-            head=new_node;
-            temp=new_node;
+            head = new_node;
         }
         else
         {
-            new_node->prev=temp;
-            temp->next=new_node;
-            temp=new_node;
+            new_node->next = head;
+            head->prev = new_node;
+            head = new_node;
         }
-   
+    }
 }
-
 void display()
 {
     Node *temp = head;
@@ -44,10 +42,6 @@ void display()
 int main()
 {
     head = 0;
-    int n;
-    cin>>n;
-    for(int i=0;i<n;i++)
-        insert();
+    insert();
     display();
-    
 }

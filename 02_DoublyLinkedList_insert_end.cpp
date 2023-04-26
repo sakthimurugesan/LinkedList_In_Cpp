@@ -6,7 +6,7 @@ struct Node
     struct Node *prev;
     struct Node *next;
 };
-
+// 26.4
 struct Node *head;
 struct Node *temp;
 void insert()

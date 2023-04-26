@@ -31,14 +31,16 @@ void insert()
     }
 }
 void deleteLastNode() {
-    if (head == NULL) { // check if list is empty
+    if (head == NULL) 
+    { // check if list is empty
         return;
     }
 
     Node* secondLastNode = head;
     Node* lastNode = head->next;
 
-    if (lastNode == NULL) { // list has only one node
+    if (lastNode == NULL) { 
+        // list has only one node
         delete head;
         head = NULL;
         return;

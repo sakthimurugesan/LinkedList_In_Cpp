@@ -38,6 +38,7 @@ void deleteFirstNode() {
     }
 
     head = head->next; // set head to ptr node
+    head->prev=0;
     
 }
 void display()
