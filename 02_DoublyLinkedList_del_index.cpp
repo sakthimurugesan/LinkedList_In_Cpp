@@ -30,17 +30,18 @@ void insert()
         }
     }
 }
-void insertIndex(int pos,int n) {
-    
-    Node *obj=new Node;
-    obj->data=n;
+void indexDelete(int index) 
+{
     Node *ptr=head;
-    for(int i=1;i<pos-1;i++)
-    ptr=ptr->next;
-    obj->next=ptr->next;
-    ptr->next->prev=obj;
-    ptr->next=obj;
-    
+    for(int i=1;i<index-1;i++)
+    {
+        ptr=ptr->next;
+    }
+    ptr->next->next->prev=ptr;
+    Node *t=ptr->next;
+    ptr->next=ptr->next->next;
+    delete t;
+
 }
 void display()
 {
@@ -57,7 +58,7 @@ int main()
     head = 0;
     insert();
     display();
-    insertIndex(5,8888);
+    indexDelete(5);
     display();
     
 }
